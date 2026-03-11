@@ -1,0 +1,61 @@
+{
+  "config": {
+    "fixedOrder": true
+  },
+  "prototypes": [
+    {
+      "name": "NormalCar",
+      "accel": 2.6,
+      "decel": 4.5,
+      "length": 5.0,
+      "maxSpeed": 25.0,
+      "minGap": 2.5,
+      "sigma": 0.5,
+      "speedDeviation": 0.1,
+      "tau": 1.5
+    },
+    {
+      "name": "AdvisedCar",
+      "accel": 2.6,
+      "decel": 4.5,
+      "length": 5.0,
+      "maxSpeed": 5.0,
+      "minGap": 2.5,
+      "sigma": 0.5,
+      "speedDeviation": 0.1,
+      "tau": 0.5
+    }
+  ],
+  "vehicles": [
+    {
+      "startingTime": "0 s",
+      "endingTime": "40 s",
+      "targetFlow": 3000,
+      "maxNumberVehicles": 200,
+      "route": "2",
+      "lanes": [1, 2],
+      "types": [
+        {
+          "name": "NormalCar",
+          "weight": 100
+        }
+      ]
+    },
+    {
+      "startingTime": "40 s",
+      "targetFlow": 3000,
+      "maxNumberVehicles": 200,
+      "route": "2",
+      "lanes": [1, 2],
+      "types": [
+        {
+          "name": "AdvisedCar",
+          "weight": 100,
+          "applications": [
+            "org.eclipse.mosaic.fed.application.app.etsi.VehicleCamSendingApp"
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,110 @@
+{
+    "config": {
+        "fixedOrder": true
+    },
+    "prototypes": [
+        {
+            "name": "NormalCar",
+            "accel": 2.6,
+            "decel": 4.5,
+            "length": 5.0,
+            "maxSpeed": 70.0,
+            "minGap": 2.5,
+            "sigma": 0.5,
+            "speedDeviation": 0.1,
+            "tau": 1.5
+        },
+        {
+            "name": "ConnectedCar",
+            "accel": 2.6,
+            "decel": 4.5,
+            "length": 5.0,
+            "maxSpeed": 70.0,
+            "minGap": 2.5,
+            "sigma": 0.5,
+            "speedDeviation": 0.1,
+            "tau": 0.5
+        },
+        {
+            "name": "SlowCar",
+            "accel": 2.6,
+            "decel": 4.5,
+            "length": 5.0,
+            "maxSpeed": 10.0,
+            "minGap": 2.5,
+            "sigma": 0.5,
+            "speedDeviation": 0.1,
+            "tau": 1.5
+        }
+    ],
+    "vehicles": [
+        {
+            "startingTime": "0 s",
+            "endingTime": "20 s",
+            "targetFlow": 6000,
+            "maxNumberVehicles": 200,
+            "route": "2",
+            "lanes": [1, 2],
+            "types": [
+                {
+                    "name": "SlowCar",
+                    "weight": 100
+                }
+            ]
+        },
+        {
+            "startingTime": "20 s",
+            "targetFlow": 6000,
+            "maxNumberVehicles": 500,
+            "route": "2",
+            "lanes": [1, 2],
+            "types": [
+                {
+                    "name": "NormalCar",
+                    "weight": 50
+                },
+                {
+                    "name": "ConnectedCar",
+                    "weight": 50,
+                    "applications": [
+                        "org.eclipse.mosaic.fed.application.app.etsi.VehicleCamSendingApp"
+                    ]
+                }
+            ]
+        },
+        {
+            "startingTime": "0 s",
+            "endingTime": "20 s",
+            "targetFlow": 6000,
+            "maxNumberVehicles": 200,
+            "route": "1",
+            "lanes": [0],
+            "types": [
+                {
+                    "name": "SlowCar",
+                    "weight": 100
+                }
+            ]
+        },
+        {
+            "startingTime": "20 s",
+            "targetFlow": 6000,
+            "maxNumberVehicles": 500,
+            "route": "1",
+            "lanes": [0],
+            "types": [
+                {
+                    "name": "NormalCar",
+                    "weight": 50
+                },
+                {
+                    "name": "ConnectedCar",
+                    "weight": 50,
+                    "applications": [
+                        "org.eclipse.mosaic.fed.application.app.etsi.VehicleCamSendingApp"
+                    ]
+                }
+            ]
+        }
+    ]
+}

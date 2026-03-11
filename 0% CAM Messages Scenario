@@ -1,0 +1,85 @@
+{
+    "config": {
+        "fixedOrder": true
+    },
+    "prototypes": [
+        {
+            "name": "Car",
+            "accel": 2.6,
+            "decel": 4.5,
+            "length": 5.0,
+            "maxSpeed": 70.0,
+            "minGap": 2.5,
+            "sigma": 0.5,
+            "speedDeviation": 0.1,
+            "tau": 1
+        },
+        {
+            "name": "SlowCar",
+            "accel": 2.6,
+            "decel": 4.5,
+            "length": 5.0,
+            "maxSpeed": 10.0,
+            "minGap": 2.5,
+            "sigma": 0.5,
+            "speedDeviation": 0.1,
+            "tau": 1
+        }
+    ],
+    "vehicles": [
+        {
+            "startingTime": "0 s",
+            "endingTime": "20 s",
+            "targetFlow": 6000,
+            "maxNumberVehicles": 200,
+            "route": "2",
+            "lanes": [1, 2],
+            "types": [
+                {
+                    "name": "SlowCar",
+                    "weight": 100
+                }
+            ]
+        },
+        {
+            "startingTime": "20 s",
+            "targetFlow": 6000,
+            "maxNumberVehicles": 500,
+            "route": "2",
+            "lanes": [1, 2],
+            "types": [
+                {
+                    "name": "Car",
+                    "weight": 100
+                }
+            ]
+        },
+        {
+            "startingTime": "0 s",
+            "endingTime": "20 s",
+            "targetFlow": 6000,
+            "maxNumberVehicles": 200,
+            "route": "1",
+            "lanes": [0],
+            "types": [
+                {
+                    "name": "SlowCar",
+                    "weight": 100
+                }
+            ]
+        },
+        {
+            "startingTime": "20 s",
+            "targetFlow": 6000,
+            "maxNumberVehicles": 500,
+            "route": "1",
+            "lanes": [0],
+            "types": [
+                {
+                    "name": "Car",
+                    "weight": 100
+                }
+            ]
+        }
+    ]
+}
